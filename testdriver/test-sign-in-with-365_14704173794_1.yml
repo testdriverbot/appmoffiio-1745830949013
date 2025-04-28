@@ -1,0 +1,19 @@
+version: 4.2.29
+session: 680f4954d6ee190249814b04
+steps:
+  - prompt: /run testdriver\login.yml
+    commands:
+      - command: run
+        file: testdriver\login.yml
+  - prompt: Click on the "Sign in with 365" button.
+    commands:
+      - command: hover-text
+        text: Sign in with 365
+        description: button to sign in with Microsoft 365
+        action: click
+  - prompt: Assert that the Office 365 login page is displayed.
+    commands:
+      - command: assert
+        expect: >-
+          the Office 365 login page is displayed with "Sign in" and "Email,
+          phone, or Skype" visible
