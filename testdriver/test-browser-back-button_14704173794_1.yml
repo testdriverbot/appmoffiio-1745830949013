@@ -1,0 +1,24 @@
+version: 4.2.29
+session: 680f4951d6ee190249814b02
+steps:
+  - prompt: /run testdriver\login.yml
+    commands:
+      - command: run
+        file: testdriver\login.yml
+  - prompt: Navigate to the login page.
+    commands:
+      - command: hover-text
+        text: Email address*
+        description: email input field label
+        action: click
+  - prompt: Click the "Create an account" link.
+    commands:
+      - command: hover-text
+        text: Create an account
+        description: create an account link at the bottom of the login form
+        action: click
+  - prompt: Click the browser's back button.
+    commands:
+      - command: hover-image
+        description: a left-pointing arrow in the top left corner of the browser
+        action: click
