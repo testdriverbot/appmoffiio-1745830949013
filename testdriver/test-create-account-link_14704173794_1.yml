@@ -1,0 +1,49 @@
+version: 4.2.29
+session: 680f4983390031a3fc261441
+steps:
+  - prompt: /run testdriver\login.yml
+    commands:
+      - command: run
+        file: testdriver\login.yml
+  - prompt: Click the "Create an account" link.
+    commands:
+      - command: hover-text
+        text: Create an account
+        description: link to create a new account at the bottom of the login form
+        action: click
+  - prompt: Assert that the user is taken to the registration form.
+    commands:
+      - command: assert
+        expect: the registration form with "Register" and input fields is visible
+  - prompt: Fill in the registration form with valid data.
+    commands:
+      - command: hover-text
+        text: First name*
+        description: first name input field label
+        action: click
+      - command: type
+        text: John
+      - command: hover-text
+        text: Last name*
+        description: last name input field label
+        action: click
+      - command: type
+        text: Doe
+      - command: hover-text
+        text: Email address*
+        description: email address input field label
+        action: click
+      - command: type
+        text: john.doe@mail.com
+      - command: hover-text
+        text: Password*
+        description: password input field label
+        action: click
+      - command: type
+        text: StrongPassword123
+      - command: hover-text
+        text: Confirm password*
+        description: confirm password input field label
+        action: click
+      - command: type
+        text: StrongPassword123
