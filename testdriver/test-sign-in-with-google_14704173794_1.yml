@@ -1,0 +1,42 @@
+version: 4.2.29
+session: 680f4952390031a3fc261425
+steps:
+  - prompt: /run testdriver\login.yml
+    commands:
+      - command: run
+        file: testdriver\login.yml
+  - prompt: Click on the "Sign in with Google" button.
+    commands:
+      - command: hover-text
+        text: Sign in with Google
+        description: Google sign-in button below the login form
+        action: click
+  - prompt: Assert that the Google login page is displayed.
+    commands:
+      - command: assert
+        expect: the Google login page is displayed with "Sign in" text
+  - prompt: Enter Google account credentials.
+    commands:
+      - command: hover-text
+        text: Email or phone
+        description: email input field
+        action: click
+      - command: type
+        text: testuser@example.com
+  - prompt: Enter Google account credentials.
+    commands:
+      - command: press-keys
+        keys:
+          - enter
+      - command: wait
+        timeout: 2000
+      - command: hover-text
+        text: Enter your password
+        description: password input field
+        action: click
+      - command: type
+        text: yourpassword123
+  - prompt: Assert successful login or appropriate error message.
+    commands:
+      - command: assert
+        expect: the Google login page is displayed with "Sign in" text
