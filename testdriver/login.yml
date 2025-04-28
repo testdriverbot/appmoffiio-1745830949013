@@ -1,0 +1,59 @@
+version: 4.2.29
+session: 680f4600390031a3fc261403
+steps:
+  - prompt: >-
+      login with username "theom+envcypress1@moffi.io" and password
+      "Testcypress1"
+    commands:
+      - command: hover-text
+        text: Email address*
+        description: email input field label
+        action: click
+      - command: type
+        text: theom+envcypress1@moffi.io
+      - command: hover-text
+        text: Next
+        description: next button below email input
+        action: click
+  - prompt: >-
+      login with username "theom+envcypress1@moffi.io" and password
+      "Testcypress1"
+    commands:
+      - command: hover-text
+        text: Password*
+        description: password input field label
+        action: click
+      - command: type
+        text: Testcypress1
+      - command: hover-text
+        text: Log in
+        description: log in button below password input
+        action: click
+  - prompt: >-
+      login with username "theom+envcypress1@moffi.io" and password
+      "Testcypress1"
+    commands:
+      - command: hover-text
+        text: Password*
+        description: password input field label
+        action: click
+      - command: type
+        text: Testcypress1
+      - command: hover-text
+        text: Log in
+        description: log in button below password input
+        action: click
+  - prompt: >-
+      login with username "theom+envcypress1@moffi.io" and password
+      "Testcypress1"
+    commands:
+      - command: hover-text
+        text: Password*
+        description: password input field label
+        action: click
+      - command: type
+        text: Testcypress1
+      - command: hover-text
+        text: Log in
+        description: log in button below password input
+        action: click
